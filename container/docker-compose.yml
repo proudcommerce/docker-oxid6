@@ -1,0 +1,27 @@
+version: '2'
+services:
+  oxid6_apache:
+    build: ps_apache_php7/.
+    restart: always
+    container_name: oxid6_apache
+    hostname: oxid6.docker.local
+    ports:
+      - "80:80"
+    volumes:
+      - /Websites/docker_oxid6/data/www/:/var/www/html/
+    links:
+      - oxid6_mysql:mysql_host    
+  oxid6_mysql:
+    build: ps_mysql_57/.
+    restart: always
+    container_name: oxid6_mysql
+    hostname: mysql.oxid6.docker.local
+    volumes:
+      - /Websites/docker_oxid6/data/mysql/:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: DxywwgCBjpJs03iszyXHdm9rkAET
+      MYSQL_DATABASE: oxid6
+      MYSQL_USER: oxid6
+      MYSQL_PASSWORD: RynwtffQJr2EnNaTgGEQ
+    ports:
+      - "127.0.0.1:7000:3306"
