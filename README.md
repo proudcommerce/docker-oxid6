@@ -17,7 +17,7 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6 (beta)
 - Change to www-root:
     `cd /var/www/html/`
 - [Install composer](https://getcomposer.org/download/)
-- [Install OXID](https://github.com/OXID-eSales/oxideshop_ce/tree/v6.0.0-rc.2#installation)
+- [Install OXID](http://oxid-eshop-developer-documentation.readthedocs.io/en/latest/getting_started/eshop_installation.html)
 - Have fun ...
 
 
