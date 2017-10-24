@@ -1,5 +1,5 @@
 # Docker OXID eShop 6
-Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6 (beta)
+Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 
 ## Installation
 
