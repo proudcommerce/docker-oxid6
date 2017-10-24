@@ -13,10 +13,7 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 - Fire up docker container:
     `docker-compose up` (for background: `docker-compose up -d`)
 - Connect to apache container:
-    `docker exec -ti oxid6_apache bash`
-- Change to www-root:
-    `cd /var/www/html/`
-- [Install composer](https://getcomposer.org/download/)
+    `docker-compose exec oxid6_apache bash`
 - [Install OXID](http://oxid-eshop-developer-documentation.readthedocs.io/en/latest/getting_started/eshop_installation.html)
 - Have fun ...
 
