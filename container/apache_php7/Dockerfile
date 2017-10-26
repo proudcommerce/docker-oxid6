@@ -1,6 +1,6 @@
 FROM php:7.1-apache
 
-MAINTAINER merkl@proudsourcing.de
+MAINTAINER module@proudcommerce.com
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
@@ -35,11 +35,10 @@ RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php
 #RUN composer global require hirak/prestissimo
 #USER root
 
-# enable apache modules
+# apache stuff
 RUN /usr/sbin/a2enmod rewrite && /usr/sbin/a2enmod headers && /usr/sbin/a2enmod expires
+COPY ./files/000-default.conf /etc/apache2/sites-available/000-default.conf
 
-# use own vhost configuration
-COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY ./entrypoint.d/* /entrypoint.d/
 
-COPY ./ps_entrypoint.sh /
-CMD ["/bin/sh", "/ps_entrypoint.sh"]
+WORKDIR /var/www/html/

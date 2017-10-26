@@ -5,9 +5,6 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 
 - [Pull this repo](https://github.com/proudcommerce/docker-oxid6.git)
 - [Install docker compose](https://docs.docker.com/compose/install/)
-- Change into container directory: `cd container`
-- Change volume mappings:
-    `vi docker-compose.yml`
 - Create docker images and container:
     `docker-compose build`
 - Fire up docker container:
