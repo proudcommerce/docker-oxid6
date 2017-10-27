@@ -3,8 +3,8 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 
 ## Installation
 
-- Get this repository
-	`git clone https://github.com/proudcommerce/docker-oxid6.git`
+- Clone repository:
+    `git clone https://github.com/proudcommerce/docker-oxid6.git`
 - Create docker container:
     `docker-compose build`
 - Fire up docker container:
