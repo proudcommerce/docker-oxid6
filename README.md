@@ -18,7 +18,7 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 ### OXID Bootstrap
 
 - OXID composer project (dev-b-6.0-ce) will be created automatically.
-- This takes some minutes. Finished when autoloader.php exists.
+- This takes some minutes, finished when autoloader.php exists.
 
 ### Demo data
 
