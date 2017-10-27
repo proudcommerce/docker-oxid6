@@ -9,20 +9,22 @@ Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
     `docker-compose build`
 - Fire up docker container:
     `docker-compose up` (for background: `docker-compose up -d`)
-- Have fun *
+- Have fun
 	`http://localhost`
 
 
-## * Some notices
+## Some notices
 
 ### OXID Bootstrap
 
-- OXID composer project (latest) will be created automatically.
+- OXID composer project (dev-b-6.0-ce) will be created automatically.
+- This takes some minutes. Finished when autoloader.php exists.
 
 ### Demo data
 
 - Demo data and customized confing.inc.php will be installed/created also automatically.
 - If you need a clean project, remove container/apache_php7/entrypoint.d/030-demodata.sh before building the container.
+- Shop admin credentials: admin / admin
 
 ### Changing database credentials/domain/port
 
