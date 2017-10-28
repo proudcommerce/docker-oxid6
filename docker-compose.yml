@@ -4,7 +4,7 @@ services:
   oxid6_apache:
     build: container/apache_php7/.
     container_name: oxid6_apache
-    hostname: oxid6-demo.local
+    hostname: ${DOMAIN}
     restart: always
     volumes:
       - ${PWD}/data/www/:/var/www/html/
@@ -20,6 +20,6 @@ services:
       MYSQL_DATABASE: ${MYSQL_NAME}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS}
     ports:
       - 127.0.0.1:${MYSQL_PORT_EXPOSED}:3306
