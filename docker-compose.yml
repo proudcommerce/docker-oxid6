@@ -6,6 +6,8 @@ services:
     container_name: oxid6_apache
     hostname: ${DOMAIN}
     restart: always
+    depends_on:
+      - oxid6_mysql
     volumes:
       - ${PWD}/data/www/:/var/www/html/
     ports:
