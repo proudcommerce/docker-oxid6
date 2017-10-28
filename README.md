@@ -23,7 +23,7 @@ docker-compose up
 ## Configuration
 
 ### Installation
-- Creating oxid project takes some time. It´s finished when `data/www/vendor/autoload.php` exists.
+- Creating oxid project takes rund about 5 minutes. It´s finished when `data/www/source/.htaccess` exists.
 - Shop url: `http://localhost`
 - Shop admin credentials: `admin / admin`
 
