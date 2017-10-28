@@ -1,36 +1,58 @@
 # Docker OXID eShop 6
-Docker Container with PHP 7, MySQL 5.7 and OXID eShop 6.
 
-## Installation
+This setup bootstraps an dockerized developer environment for OXID eShop 6.
 
-- Clone repository:
-    `git clone https://github.com/proudcommerce/docker-oxid6.git`
-- Create docker container:
-    `docker-compose build`
-- Fire up docker container:
-    `docker-compose up` (for background: `docker-compose up -d`)
-- Have fun
-	`http://localhost`
+## Overview
 
+- Apache 2.4 container PHP 7.1
+- MySQL 5.7 container
+- OXID composer project dev-b-6.0-ce
+- OXID demo data
 
-## Some notices
+## Quickstart
 
-### OXID Bootstrap
+```bash
+# clone repository:
+git clone https://github.com/proudcommerce/docker-oxid6.git docker_oxid6
+cd docker_oxid6
+# create container
+docker-compose build
+# fire up container
+docker-compose up
+```
+## Configuration
 
-- OXID composer project (dev-b-6.0-ce) will be created automatically.
-- This takes some minutes, finished when vendor/autoload.php exists.
+### Installation
+- Creating oxid project takes some time. It´s finished when `vendor/autoload.php` exists.
+- Shop url: `http://localhost`
+- Shop admin credentials: `admin / admin`
 
-### Demo data
+### Credentials
+- You can change container credentials (domain, ports, database) in `.env` file.
+- If you change domain/port, edit `container/apache_php7/files/config.inc.php`.
+- If you change database credentials, edit `container/apache_php7/files/config.inc.php` and `container/apache_php7/entrypoint.d/030-demodata.sh`.
 
-- Demo data and customized confing.inc.php will be installed/created also automatically.
-- If you need a clean project, remove container/apache_php7/entrypoint.d/030-demodata.sh before building the container.
-- Shop admin credentials: admin / admin
+### OXID demo data
+- Normally oxid demo data will be installed automatically.
+- If you only need a clean project, without demo data, remove `container/apache_php7/entrypoint.d/030-demodata.sh` before building the container.
 
-### Changing database credentials/domain/port
+## License
 
-- If you change the domain/port/database credentials in the .env file, you also have to edit container/apache_php7/entrypoint.d/030-demodata.sh and container/apache_php7/files/config.inc.php (if demo data should be installed).
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
 
-## Support
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
 
-Feel free to create pull requests ;-)
+## Copyright
+
+	Proud Sourcing GmbH 2017
+	www.proudcommerce.com / www.proudsourcing.de
