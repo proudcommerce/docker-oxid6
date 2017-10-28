@@ -1,11 +1,11 @@
 # Docker OXID eShop 6
 
-This setup bootstraps an dockerized developer environment for OXID eShop 6.
+This setup bootstraps an dockerized developer environment for [OXID eShop 6](https://github.com/OXID-eSales/oxideshop_ce).
 
 ## Overview
 
-- Apache 2.4 container PHP 7.1
-- MySQL 5.7 container
+- Apache 2.4 container PHP 7.1 ([Dockerfile](container/apache_php7/Dockerfile))
+- MySQL 5.7 container ([Dockerfile](https://github.com/docker-library/mysql/blob/883703dfb30d9c197e0059a669c4bb64d55f6e0d/5.7/Dockerfile))
 - OXID composer project dev-b-6.0-ce
 - OXID demo data
 
@@ -23,7 +23,7 @@ docker-compose up
 ## Configuration
 
 ### Installation
-- Creating oxid project takes some time. It´s finished when `vendor/autoload.php` exists.
+- Creating oxid project takes some time. It´s finished when `data/www/vendor/autoload.php` exists.
 - Shop url: `http://localhost`
 - Shop admin credentials: `admin / admin`
 

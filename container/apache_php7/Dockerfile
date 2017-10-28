@@ -1,4 +1,5 @@
 FROM php:7.1-apache
+# https://github.com/docker-library/php/blob/0bb4068bd639ba98631bc2999e0d20cae583ec00/7.1/jessie/cli/Dockerfile
 
 MAINTAINER module@proudcommerce.com
 
