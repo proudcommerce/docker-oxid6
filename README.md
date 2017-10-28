@@ -36,6 +36,10 @@ docker-compose up
 - Normally oxid demo data will be installed automatically.
 - If you only need a clean project, without demo data, remove `container/apache_php7/entrypoint.d/030-demodata.sh` before building the container.
 
+## Support
+
+[https://forum.oxid-esales.com/t/docker-container-fur-oxid-6/92282](https://forum.oxid-esales.com/t/docker-container-fur-oxid-6/92282)
+
 ## License
 
     This program is free software: you can redistribute it and/or modify
