@@ -23,7 +23,7 @@ docker-compose up
 ## Configuration
 
 ### Installation
-- Creating oxid project takes round about 5 minutes. It´s finished when `data/www/source/.htaccess` exists.
+- Creating oxid project takes round about 5 minutes. It´s finished when `data/www/source/.htaccess` exists (or log shows `OXID bootstrap completed!`).
 - Shop url: `http://localhost`
 - Shop admin credentials: `admin / admin`
 
