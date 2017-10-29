@@ -23,9 +23,12 @@ docker-compose up
 ## Configuration
 
 ### Installation
-- Creating oxid project takes rund about 5 minutes. It´s finished when `data/www/source/.htaccess` exists.
+- Creating oxid project takes round about 5 minutes. It´s finished when `data/www/source/.htaccess` exists.
 - Shop url: `http://localhost`
 - Shop admin credentials: `admin / admin`
+
+### Container
+- If you would like to run container in background, use `docker-compose up -d` for starting container and `docker logs -f oxid6_apache` for log information (eg. composer information).
 
 ### Credentials
 - You can change container credentials (domain, ports, database) in `.env` file.
