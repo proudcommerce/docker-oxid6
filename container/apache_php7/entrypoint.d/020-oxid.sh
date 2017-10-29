@@ -8,4 +8,5 @@ if [ ! -f /var/www/html/source/config.inc.php ]
 then
 	composer create-project --dev --keep-vcs oxid-esales/oxideshop-project . ${OXID_EDITION}
 	chown -R www-data:www-data /var/www/html/source/
+	echo "OXID bootstrap completed!"
 fi
