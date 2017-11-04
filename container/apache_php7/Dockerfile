@@ -14,7 +14,7 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 RUN apt-get update \
   && echo 'deb http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list \
   && echo 'deb-src http://packages.dotdeb.org jessie all' >> /etc/apt/sources.list \
-  && apt-get install -y less vim wget unzip rsync git postfix mysql-client \
+  && apt-get install -y less vim wget unzip rsync git mysql-client \
   && wget https://www.dotdeb.org/dotdeb.gpg \
   && apt-key add dotdeb.gpg \
   && apt-get update \
