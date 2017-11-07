@@ -18,13 +18,30 @@ RUN apt-get update \
   && wget https://www.dotdeb.org/dotdeb.gpg \
   && apt-key add dotdeb.gpg \
   && apt-get update \
-  && apt-get install -y libfreetype6 libjpeg62-turbo libpng12-dev libjpeg-dev libwebp5 libxpm4 php7.0-mysql php7.0-gd \
+  && apt-get install -y libfreetype6 libjpeg62-turbo libpng12-dev libjpeg-dev libwebp5 libxpm4 php-mysql php-gd php-zip \
   && docker-php-ext-install pdo_mysql \
   && docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ \
   && docker-php-ext-install gd \
+  && docker-php-ext-install zip \
   && apt-get clean \
   && echo "export TERM=xterm" >> /root/.bashrc \
   && apt-get autoremove -y
+
+
+# Install Xdebug
+RUN curl -fsSL 'https://xdebug.org/files/xdebug-2.4.0.tgz' -o xdebug.tar.gz \
+    && mkdir -p xdebug \
+    && tar -xf xdebug.tar.gz -C xdebug --strip-components=1 \
+    && rm xdebug.tar.gz \
+    && ( \
+    cd xdebug \
+    && phpize \
+    && ./configure --enable-xdebug \
+    && make -j$(nproc) \
+    && make install \
+    ) \
+    && rm -r xdebug \
+    && docker-php-ext-enable xdebug
 
 # composer stuff
 RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php \
