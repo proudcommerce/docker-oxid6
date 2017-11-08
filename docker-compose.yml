@@ -4,7 +4,6 @@ services:
 
   oxid6_apache:
     build: container/apache_php7/.
-    container_name: oxid6_apache
     hostname: ${DOMAIN}
     restart: always
     depends_on:
@@ -18,7 +17,6 @@ services:
       
   oxid6_mysql:
     image: mysql:5.7
-    container_name: oxid6_mysql
     hostname: mysql.${DOMAIN}
     restart: always
     volumes:
@@ -32,7 +30,6 @@ services:
       - ${MYSQL_PORT_EXPOSED}:3306
 
   oxid6_mailhog:
-    container_name: oxid6_mailhog
     hostname: mailhog.${DOMAIN}
     image: mailhog/mailhog:latest
     ports:
