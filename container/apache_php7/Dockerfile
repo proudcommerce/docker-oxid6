@@ -18,11 +18,13 @@ RUN apt-get update \
   && wget https://www.dotdeb.org/dotdeb.gpg \
   && apt-key add dotdeb.gpg \
   && apt-get update \
-  && apt-get install -y libfreetype6 libjpeg62-turbo libpng12-dev libjpeg-dev libwebp5 libxpm4 php-mysql php-gd php-zip \
+  && apt-get install -y libfreetype6 libjpeg62-turbo libpng12-dev libjpeg-dev libxml2-dev libwebp5 libxpm4 php-mysql php-gd php-zip php-soap php-bcmath \
   && docker-php-ext-install pdo_mysql \
-  && docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ \
   && docker-php-ext-install gd \
   && docker-php-ext-install zip \
+  && docker-php-ext-install bcmath \
+  && docker-php-ext-install soap \
+  && docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ \
   && apt-get clean \
   && echo "export TERM=xterm" >> /root/.bashrc \
   && apt-get autoremove -y
