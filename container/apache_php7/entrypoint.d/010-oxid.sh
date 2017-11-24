@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-OXID_EDITION="dev-b-6.0-ce"
-
 # bootstrap oxid files/project
 if [ ! -f /var/www/html/source/config.inc.php ]
 then
-	composer create-project --dev --keep-vcs oxid-esales/oxideshop-project . ${OXID_EDITION}
+	composer create-project --dev --keep-vcs oxid-esales/oxideshop-project . ${OXID_VERSION}
+	mv /var/www/config.inc.php /var/www/html/source/config.inc.php
 	chown -R www-data:www-data /var/www/html/source/
-	echo "OXID bootstrap completed!"
+	echo "#####################################"
+	echo "##### OXID bootstrap completed! #####"
+	echo "#####################################"
 fi

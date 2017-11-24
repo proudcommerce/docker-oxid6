@@ -7,7 +7,7 @@ This setup bootstraps an dockerized developer environment for [OXID eShop 6](htt
 - Apache 2.4 container PHP 7.1 ([Dockerfile](container/apache_php7/Dockerfile))
 - MySQL 5.7 container ([Dockerfile](https://github.com/docker-library/mysql/blob/883703dfb30d9c197e0059a669c4bb64d55f6e0d/5.7/Dockerfile))
 - MailHog container ([Dockerfile](https://github.com/mailhog/MailHog/blob/master/Dockerfile))
-- OXID composer project dev-b-6.0-ce ([6.0.0-rc.2 --dev](https://github.com/OXID-eSales/oxideshop_ce/blob/v6.0.0-rc.2/composer.json))
+- OXID composer project [dev-b-6.0-ce] ([6.0.0](https://github.com/OXID-eSales/oxideshop_ce/blob/v6.0.0/composer.json))
 - OXID demo data
 
 ## Quickstart
@@ -24,7 +24,7 @@ docker-compose up
 ## Configuration
 
 ### Installation
-- Creating oxid project takes round about 5 minutes. It´s finished when `data/www/source/.htaccess` exists (or log shows `OXID bootstrap completed!`).
+- Creating oxid project takes round about 5 minutes. It´s finished when docker log shows `OXID bootstrap completed!`).
 - Shop url: `http://oxid6.localhost`
 - Shop admin `http://oxid6.localhost/admin/`, credentials: `admin / admin`
 - MailHog web gui: `http://oxid6.localhost:8025` (port see `.env` file)
@@ -33,13 +33,11 @@ docker-compose up
 - If you would like to run container in background, use `docker-compose up -d` for starting container and `docker logs -f oxid6_apache` for log information (eg. composer information).
 
 ### Credentials
-- You can change container credentials (domain, ports, database) in `.env` file.
-- If you change domain/port, edit `container/apache_php7/files/config.inc.php`.
-- If you change database credentials, edit `container/apache_php7/files/config.inc.php` and `container/apache_php7/entrypoint.d/030-demodata.sh`.
+- You can change all credentials (domain, ports, database, ...) in `.env` file.
 
 ### OXID demo data
 - Normally oxid demo data will be installed automatically.
-- If you only need a clean project, without demo data, remove `container/apache_php7/entrypoint.d/030-demodata.sh` before building the container.
+- If you need a project without demo data, set `OXID_DEMODATA=false` in `.env` file.
 
 ## Support
 

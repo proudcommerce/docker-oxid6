@@ -54,9 +54,9 @@ RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php
 # prepare entrypoint.d pattern
 RUN mkdir /entrypoint.d
 COPY ./files/entrypoint.sh /entrypoint.sh
-RUN chmod 777 /entrypoint.sh
 COPY ./entrypoint.d/* /entrypoint.d/
-RUN chmod 777 /entrypoint.d/*
+RUN chmod 777 /entrypoint.sh \
+  && chmod 777 /entrypoint.d/*
 
 # apache stuff
 RUN /usr/sbin/a2enmod rewrite && /usr/sbin/a2enmod headers && /usr/sbin/a2enmod expires

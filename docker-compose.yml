@@ -10,6 +10,13 @@ services:
       - oxid6_mysql
     volumes:
       - ${PWD}/data/www/:/var/www/html/
+    environment:
+      DOMAIN: ${DOMAIN}
+      OXID_VERSION: ${OXID_VERSION}
+      OXID_DEMODATA: ${OXID_DEMODATA}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     ports:
       - ${HTTP_PORT}:80
     links:
@@ -22,10 +29,10 @@ services:
     volumes:
       - ${PWD}/data/mysql/:/var/lib/mysql
     environment:
-      MYSQL_DATABASE: ${MYSQL_NAME}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASS}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - ${MYSQL_PORT_EXPOSED}:3306
 
