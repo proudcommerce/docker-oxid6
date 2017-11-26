@@ -34,6 +34,9 @@ docker-compose up
 ### Container
 - If you would like to run container in background, use `docker-compose up -d` for starting container and `docker logs -f oxid6_apache` for log information (eg. composer information).
 
+### Data
+- Data (`www` and `mysql`) is storend on host: `data` directory
+
 ### Credentials
 - You can change all credentials (domain, ports, database, ...) in `.env` file.
 
