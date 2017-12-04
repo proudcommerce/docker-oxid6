@@ -1,5 +1,5 @@
 FROM php:7.1-apache
-# https://github.com/docker-library/php/blob/0bb4068bd639ba98631bc2999e0d20cae583ec00/7.1/jessie/cli/Dockerfile
+# https://github.com/docker-library/php/blob/f795769559d9ce740e57ebd32f60f8a4569ee5b6/7.2/stretch/apache/Dockerfile
 
 MAINTAINER module@proudcommerce.com
 
@@ -19,12 +19,8 @@ RUN apt-get update \
   && apt-key add dotdeb.gpg \
   && apt-get update \
   && apt-get install -y libfreetype6 libjpeg62-turbo libpng12-dev libjpeg-dev libxml2-dev libwebp5 libxpm4 php-mysql php-gd php-zip php-soap php-bcmath \
-  && docker-php-ext-install pdo_mysql \
-  && docker-php-ext-install gd \
-  && docker-php-ext-install zip \
-  && docker-php-ext-install bcmath \
-  && docker-php-ext-install soap \
   && docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ \
+  && docker-php-ext-install gd zip bcmath soap pdo_mysql \
   && apt-get clean \
   && echo "export TERM=xterm" >> /root/.bashrc \
   && apt-get autoremove -y
