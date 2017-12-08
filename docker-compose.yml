@@ -9,7 +9,7 @@ services:
     depends_on:
       - oxid6_mysql
     volumes:
-      - ${PWD}/data/www/:/var/www/html/
+      - ${PWD}/data/www/:/var/www/html/:cached
     environment:
       DOMAIN: ${DOMAIN}
       OXID_VERSION: ${OXID_VERSION}
