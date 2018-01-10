@@ -12,6 +12,7 @@ services:
       - ${PWD}/data/www/:/var/www/html/:cached
     environment:
       DOMAIN: ${DOMAIN}
+      APACHE_PORT: ${APACHE_PORT}
       OXID_VERSION: ${OXID_VERSION}
       OXID_DEMODATA: ${OXID_DEMODATA}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
