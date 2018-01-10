@@ -16,9 +16,8 @@ RUN apt-get update -y && \
   echo "export TERM=xterm" >> /root/.bashrc
 
 # install php extensions
-RUN docker-php-ext-install -j$(nproc) \
-  curl json xml mbstring zip bcmath soap pdo_mysql gd && \
-  docker-php-ext-configure gd --with-jpeg-dir=/usr/local/
+RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ && \
+  docker-php-ext-install -j$(nproc) curl json xml mbstring zip bcmath soap pdo_mysql gd
 
 # composer stuff
 RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php \
