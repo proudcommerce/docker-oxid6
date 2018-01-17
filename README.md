@@ -12,7 +12,8 @@ This setup bootstraps an dockerized developer environment for [OXID eShop 6](htt
 - OXID demo data
 
 ## Quickstart
-
+1. Install [docker enginge](https://docs.docker.com/engine/installation/)
+2. Fire up container
 ```bash
 # clone repository:
 git clone https://github.com/proudcommerce/docker-oxid6.git docker_oxid6
