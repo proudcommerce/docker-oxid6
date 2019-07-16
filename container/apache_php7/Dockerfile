@@ -8,7 +8,7 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 # install packages
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends \
-  less vim wget unzip rsync git mysql-client \
+  less vim wget unzip rsync git default-mysql-client \
   libcurl4-openssl-dev libfreetype6 libjpeg62-turbo libpng-dev libjpeg-dev libxml2-dev libxpm4 && \
   apt-get clean && \
   apt-get autoremove -y && \
