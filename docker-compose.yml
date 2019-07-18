@@ -37,7 +37,7 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  oxid6_memcache:
+  oxid6_memcached:
     image: memcached
     restart: always
     mem_limit: 128m
