@@ -37,13 +37,6 @@ services:
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
-  oxid6_memcached:
-    image: memcached
-    restart: always
-    mem_limit: 128m
-    memswap_limit: 128m
-    mem_reservation: 96m
-  
   oxid6_mailhog:
     hostname: mailhog.${DOMAIN}
     image: mailhog/mailhog:latest

@@ -9,17 +9,15 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends \
   less vim wget unzip rsync git default-mysql-client \
-  libcurl4-openssl-dev libfreetype6 libjpeg62-turbo libpng-dev libjpeg-dev libxml2-dev libxpm4 libmemcached-dev && \
+  libcurl4-openssl-dev libfreetype6 libjpeg62-turbo libpng-dev libjpeg-dev libxml2-dev libxpm4 && \
   apt-get clean && \
   apt-get autoremove -y && \
   rm -rf /var/lib/apt/lists/* && \
-  echo "export TERM=xterm" >> /root/.bashrc && \
-  pecl install memcached-3.0.4 redis apcu
+  echo "export TERM=xterm" >> /root/.bashrc
 
 # install php extensions
 RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ && \
-  docker-php-ext-enable memcached redis apcu && \
-  docker-php-ext-install -j$(nproc) zip bcmath soap pdo_mysql gd opcache
+  docker-php-ext-install -j$(nproc) zip bcmath soap pdo_mysql gd
 
 # composer stuff
 RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php \
