@@ -8,7 +8,7 @@ This setup bootstraps an dockerized developer environment for [OXID eShop 6](htt
 - MySQL 5.7 container ([Dockerfile](https://github.com/docker-library/mysql/blob/883703dfb30d9c197e0059a669c4bb64d55f6e0d/5.7/Dockerfile))
 - MailHog container ([Dockerfile](https://github.com/mailhog/MailHog/blob/master/Dockerfile))
 - phpMyAdmin container ([Dockerfile](https://hub.docker.com/r/phpmyadmin/phpmyadmin/~/dockerfile/))
-- OXID composer project ([6.1.3](https://github.com/OXID-eSales/oxideshop_metapackage_ce/blob/b-6.1/composer.json))
+- OXID composer project ([latest 6.1.x](https://github.com/OXID-eSales/oxideshop_metapackage_ce/blob/b-6.1/composer.json))
 - OXID demo data
 
 ## Quickstart
