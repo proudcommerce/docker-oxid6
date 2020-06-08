@@ -13,7 +13,8 @@ This (linux/osx) setup bootstraps an dockerized developer environment for [OXID 
 
 ## Quickstart
 1. Install [docker engine](https://docs.docker.com/engine/installation/)
-2. Fire up container
+2. Add `127.0.0.1 oxid6.localhost` to your etc/hosts file
+3. Fire up container
 ```bash
 # clone repository:
 git clone https://github.com/proudcommerce/docker-oxid6.git docker_oxid6
