@@ -29,7 +29,7 @@ $this->dbUser = \getenv('MYSQL_USER'); // database user name
 $this->dbPwd = \getenv('MYSQL_PASSWORD'); // database user password
 $this->sShopURL = 'http://'.\getenv('DOMAIN').':'.\getenv('APACHE_PORT'); // eShop base url, required
 $this->sSSLShopURL = 'https://'.\getenv('DOMAIN').':'.\getenv('APACHE_HTTPS_PORT'); // eShop SSL url, optional
-$this->sAdminSSLURL = null;            // eShop Admin SSL url, optional
+$this->sAdminSSLURL = 'https://'.\getenv('DOMAIN').':'.\getenv('APACHE_HTTPS_PORT');            // eShop Admin SSL url, optional
 $this->sShopDir = '/var/www/html/source';
 $this->sCompileDir = '/var/www/html/source/tmp';
 
