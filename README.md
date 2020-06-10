@@ -28,7 +28,7 @@ docker-compose up
 
 ### Installation
 - Creating oxid project takes round about 5 minutes. It´s finished when docker log shows `OXID bootstrap completed!`).
-- Shop: `http://oxid6.localhost`
+- Shop: `http://oxid6.localhost` (or `https://oxid6.localhost` with ssl-cert-snakeoil)
 - Shop admin `http://oxid6.localhost/admin/`, credentials: `admin / admin`
 - MailHog: `http://oxid6.localhost:8025`
 - phpMyAdmin: `http://oxid6.localhost:8080`
