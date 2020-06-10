@@ -8,7 +8,7 @@ RUN echo "Europe/Berlin" > /etc/timezone && dpkg-reconfigure -f noninteractive t
 # install packages
 RUN apt-get update -y && \
   apt-get install -y --no-install-recommends \
-  less vim wget unzip rsync git default-mysql-client libzip-dev \
+  less vim wget unzip rsync git default-mysql-client libzip-dev ssl-cert \
   libcurl4-openssl-dev libfreetype6 libjpeg62-turbo libpng-dev libjpeg-dev libxml2-dev libxpm4 && \
   apt-get clean && \
   apt-get autoremove -y && \
@@ -32,7 +32,7 @@ COPY ./entrypoint.d/* /entrypoint.d/
 RUN chmod 777 /entrypoint.sh && chmod 777 /entrypoint.d/*
 
 # apache stuff
-RUN /usr/sbin/a2enmod rewrite && /usr/sbin/a2enmod headers && /usr/sbin/a2enmod expires
+RUN /usr/sbin/a2enmod rewrite && /usr/sbin/a2enmod headers && /usr/sbin/a2enmod expires && /usr/sbin/a2enmod ssl
 COPY ./files/000-default.conf /etc/apache2/sites-available/000-default.conf
 
 # oxid stuff
