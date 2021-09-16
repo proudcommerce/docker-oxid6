@@ -4,11 +4,11 @@ This (linux/osx) setup bootstraps an dockerized developer environment for [OXID 
 
 ## Overview
 
-- Apache 2.4 container PHP 7.3 ([Dockerfile](container/apache_php7/Dockerfile))
+- Apache 2.4 container PHP 7.4 ([Dockerfile](container/apache_php7/Dockerfile))
 - MySQL 5.7 container ([Dockerfile](https://github.com/docker-library/mysql/blob/883703dfb30d9c197e0059a669c4bb64d55f6e0d/5.7/Dockerfile))
 - MailHog container ([Dockerfile](https://github.com/mailhog/MailHog/blob/master/Dockerfile))
 - phpMyAdmin container ([Dockerfile](https://hub.docker.com/r/phpmyadmin/phpmyadmin/~/dockerfile/))
-- OXID eShop ([latest 6.2.x](https://github.com/OXID-eSales/oxideshop_metapackage_ce/blob/b-6.2/composer.json))
+- OXID eShop ([latest 6.3.x](https://github.com/OXID-eSales/oxideshop_metapackage_ce/blob/b-6.3/composer.json))
 - OXID demo data
 
 ## Quickstart

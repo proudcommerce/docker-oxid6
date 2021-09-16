@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 MAINTAINER module@proudcommerce.com
 
@@ -16,12 +16,12 @@ RUN apt-get update -y && \
   echo "export TERM=xterm" >> /root/.bashrc
 
 # install php extensions
-RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/local/ && \
+RUN docker-php-ext-configure gd --with-jpeg && \
   docker-php-ext-install -j$(nproc) zip bcmath soap pdo_mysql gd
 
 # composer stuff
 RUN php -r 'readfile("https://getcomposer.org/installer");' > composer-setup.php \
-  && php composer-setup.php --1 --install-dir=/usr/local/bin --filename=composer \
+  && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
   && rm -f composer-setup.php \
   && chown www-data:www-data /var/www
 
