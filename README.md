@@ -2,6 +2,9 @@
 
 This (linux/osx) setup bootstraps an dockerized developer environment for [OXID eShop 6](https://github.com/OXID-eSales/oxideshop_ce).
 
+**For OXID 7 have a look [here](https://github.com/proudcommerce/docker-oxid7).**
+
+
 ## Overview
 
 - Apache 2.4 container PHP 8.0 ([Dockerfile](container/apache/Dockerfile))
